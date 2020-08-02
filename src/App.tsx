@@ -70,7 +70,7 @@ const App = () => {
   }
 
   const handleResultValue = useCallback(() => {
-    if (!firstInputValue || !secondInputValue || selectedCalculationMode === undefined) return;
+    if (firstInputValue === undefined || secondInputValue === undefined || selectedCalculationMode === undefined) return;
     const calculatedValue: number = calculationActions[selectedCalculationMode](firstInputValue, secondInputValue);
     setCalculatedResult(calculatedValue);
     dispatch(setCalculatedResultAction(calculatedValue));
